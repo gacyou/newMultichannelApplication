@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.ga.sdk.activity.BaseActivity;
 import com.ga.sdk.api.ApiResult;
+import com.newmultichannel.app.Common.CommonIntent;
 import com.newmultichannel.app.Fragment.MainFragment;
 import com.newmultichannel.app.Loader.GetAdLoader;
 import com.newmultichannel.app.base.ApiLoaderCallback;
@@ -34,7 +35,7 @@ public class MainActivity extends BaseActivity {
 
         @Override
         protected void onStatusOk(ad data) {
-            Log.d("testtest", "onStatusOk: " + data.getH5());
+            startActivity(CommonIntent.createLattleToolActivity(MainActivity.this, data.getH5()));
         }
     };
 }
